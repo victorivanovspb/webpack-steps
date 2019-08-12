@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');  // https://github.com/webpack-contrib/mini-css-extract-plugin
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // https://github.com/johnagan/clean-webpack-plugin
@@ -21,6 +22,11 @@ module.exports = {
         }),
         new CleanWebpackPlugin({
             path: './dist/*.*'
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jquery': 'jquery'
         })
     ],
     module: {

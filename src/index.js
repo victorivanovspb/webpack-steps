@@ -19,7 +19,7 @@ jQuery(document)
         console.log('jquery');
 
         ((selector) => {
-            const color = (Math.random() > 0.5) ? 'light-gray' : 'white';
+            const color = (Math.random() > 0.5) ? '#eee' : '#fff';
             selector.css('background-color', color);
         })( $('body') );
     });
